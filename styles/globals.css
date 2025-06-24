@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glow-button {
+    @apply bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-2 px-4 rounded shadow-lg hover:shadow-xl transition duration-300;
+  }
+
+  .card-hover {
+    @apply transition transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 220 100% 98%;
+    --foreground: 240 10% 10%;
+    --primary: 220 90% 56%;
+    --accent: 50 100% 60%;
+    --muted: 210 20% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --border: 210 15% 85%;
+    --ring: 220 90% 56%;
+  }
+
+  .dark {
+    --background: 240 10% 10%;
+    --foreground: 0 0% 98%;
+    --primary: 300 80% 60%;
+    --accent: 220 40% 30%;
+    --destructive: 0 62.8% 30.6%;
+    --border: 0 0% 20%;
+    --ring: 300 80% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
